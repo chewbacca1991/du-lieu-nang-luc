@@ -11,7 +11,7 @@ def create_connection():
             port='5432'
         )
         return connection
-    except Exception as e:
+    except psycopg2.Error as e:
         print(f'Error connecting to database: {e}')
         return None
     # Moved closing connection to ensure it closes only when not returning the connection
