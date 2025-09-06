@@ -1,5 +1,6 @@
 import psycopg2
 
+
 def create_connection():
     connection = None
     try:
