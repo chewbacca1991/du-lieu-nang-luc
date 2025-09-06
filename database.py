@@ -15,6 +15,4 @@ def create_connection():
         print(f'Error connecting to database: {e}')
         return None
     # Moved closing connection to ensure it closes only when not returning the connection
-    finally:
-        if connection is not None:
-            connection.close()
+    # Removed the finally block to prevent closing the connection prematurely
