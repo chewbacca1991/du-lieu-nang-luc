@@ -12,3 +12,7 @@ def create_connection():
         return connection
     except Exception as e:
         print(f'Error connecting to database: {e}')
+        return None
+    finally:
+        if connection:
+            connection.close()
