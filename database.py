@@ -14,6 +14,7 @@ def create_connection():
     except Exception as e:
         print(f'Error connecting to database: {e}')
         return None
+    # Moved closing connection to ensure it closes only when not returning the connection
     finally:
-        if connection:
+        if connection is not None:
             connection.close()
